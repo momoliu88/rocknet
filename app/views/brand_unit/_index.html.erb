@@ -1,0 +1,46 @@
+
+<div class="autoMaxWidth body" id="banner" style="width: 1351px;">
+	<img src="/assets/brand_pro.png" style="left: -284.5px; position: relative;">
+</div>
+<div class="wrap body">
+	<div class="west">
+		<div class="imgtit"><img src="/assets/brand_u_tit.png"></div>
+		<div class="left_menu">
+			<ul id="jzMenu">
+				<li><a class="cur" href="product_type/products?type=1" data-remote="true">三星专区</a></li>
+				<li><a href="#nokia">诺基亚专区</a></li>
+				<li><a href="#htc">HTC专区</a></li>
+			</ul>
+		</div>
+	</div>
+	<%
+	product_type = ProductType.where(:proType=>1).first
+	@size = product_type.products.size
+	@products = product_type.products.offset(0).limit(9)
+	%>
+	<div class="rightGrid">
+		<div class="brandlist">
+			<%=render :partial=>"product_type/list"%>
+		</div>
+		<div class="clear"></div>
+		<div class="brandbotline"></div>
+		<div class="clear"></div>
+		
+		<div class="breakpage">
+			<table align="center">
+				<tbody>
+					<tr><td><div class="pages" id="pag"></div></td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<script type='text/javascript'>
+	var options = {
+		currentPage: 1,
+		totalPages: <%=@size%>
+	}
+
+	$('#pag').bootstrapPaginator(options);
+</script>
+<div id="hiddenDiv"style="display:none"></div>

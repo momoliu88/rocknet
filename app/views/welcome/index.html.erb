@@ -1,4 +1,30 @@
-<div class="wrap">
+<div class="scroll body" id="scroll" style="width: 1351px;">
+	<div class="scroll_in" id="scrollIn">
+		<ul class="scroll_list" id="scrollList" style="margin-left: -1351px;">
+			<li class="bn1" style="width: 1351px;"></li>
+			<li class="bn2" style="width: 1351px;"></li>
+			<li class="bn3" style="width: 1351px;"></li>
+		</ul>
+			
+		<script type="text/javascript">
+			var oBannerL=$("#scrollList");
+			function fnResize(){
+				nBannerSizeL=$("body").innerWidth();				
+				$("#scroll,#scrollList li").width(nBannerSizeL);
+			}
+			fnResize();
+		</script>
+	</div>
+</div>
+<div id="hiddenDiv"style="display:none"></div>
+<div class="top_scroll body" id="topScroll">
+	<div class="top_scroll_in">
+		<a hidefocus="true" href="javascript:;" class="left_btn" id="leftBtn"></a>
+		<a hidefocus="true" href="javascript:;" class="right_btn" id="rightBtn"></a>
+	</div>
+</div>
+
+<div class="wrap body" id="news">
 	<div class="news_l">
 		<div class="i_news_tit"><img src="/assets/home-news-tit.png"></div>
 		<div class="news_n">

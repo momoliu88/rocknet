@@ -1,0 +1,268 @@
+﻿/*Software name:KQIQIECMS
+Email: 3955233@qq.com . QQ:3955233
+Web: http://www.kqiqi.com http://www.kqiqi.cn
+Copyright (C) Kqiqi Network All Rights Reserved.*/
+/*-- 评论调用--*/
+.my_comment {
+                clear:both;
+	margin-top:10px;
+                width:100%;
+	border:1px solid #ddebff;
+}
+.LeaveWord {
+	margin:0;
+	text-align:left;
+}
+.LeaveWord dt {
+	font-size:12px;
+	color:#999;
+	line-height:16px;
+	padding:6px 10px 3px 10px;
+	background:#ddebff;
+	vertical-align:top;
+	word-wrap:break-word;
+}
+.LeaveWord dt a {
+	line-height:14px;
+	font-weight:normal;
+}
+.LeaveWord dt span {
+	float:left;
+	color:#333;
+	font-weight:bold;
+	padding:0 2px 0 0;
+}
+.LeaveWord dd {
+	color:#333;
+	margin-top:2px;
+	height:auto;
+	_height:24px;
+	min-height:24px;
+	padding:0 10px;
+	overflow:hidden;
+	zoom:1;
+	_overflow:visible;
+}
+.LeaveWord dd .leave {
+	font-size:12px;
+	padding:0;
+	margin:10px 0;
+	line-height:20px;
+	word-break:break-all;
+	word-wrap:break-word;
+}
+.LeaveWord dd .leave a {
+	color:#333;
+	text-decoration:none;
+}
+/*分页样式,请勿删除,如需更改CSS样式,请在此基础上更改.*/
+.pages {
+	float:left;
+}
+.pages,.pages .pagesone {
+	line-height:21px;
+	height:21px;
+	font-family:Tahoma,Arial,Helvetica,sans-serif;
+}
+.pages a,.pages b,.pages .pagesone {
+	display:block;
+	float:left;
+	margin:0;
+	/*-moz-border-radius:3px;
+	-webkit-border-radius:3px;*/
+}
+.pages a {
+	/*border:1px solid #76c3fb;
+	background-color:#f9f9f9;*/
+	padding:0 3px;
+	color:#d2d6d7;
+	/*background-position:0 0;*/
+}
+.pages b {
+	/*background-color:#76c3fb;
+	background-position:0 -23px;*/
+	color:#74787b;
+	/*border:1px solid #76c3fb;*/
+	text-decoration:none;
+	padding:0 3px;font-weight:normal;
+}
+.pages a:hover {
+	/*background-color:#76c3fb;
+	background-position:0 -23px;*/
+	color:#00a0d2;
+	/*border:1px solid #76c3fb;*/
+	text-decoration:none;
+	padding:0 3px;
+}
+.pages .fl {
+	color:#666;
+	padding:0 6px 0 3px;
+}
+.pages .pagesone {
+	/*border:1px solid #76c3fb;
+	background-color:#ffffff;
+	background-position:0 -46px;*/
+	float:left;
+}
+.pages img{vertical-align:middle;float:left;padding:5px 2px 0 2px;}
+.pages input {
+	padding:0;
+	float:left;
+	background:none;
+	border:0;
+	margin:4px 3px 0 3px;
+	width:22px;
+}
+.pages button {
+	height:21px;
+	/*background-color:#f4f8fb;*/
+	padding:0 4px;
+	border:0;
+	color:#666;
+	/*border-left:1px solid #76c3fb;*/
+	cursor:pointer;
+	float:left;
+	background-position:0 -68px;
+}
+.fr .pages {
+	_float:right;
+}
+.pages6 {
+	color:#666;
+}
+/*-- ajax评论分页样式,请勿删除,如需更改CSS样式,请在此基础上更改. --*/
+.ajaxpage {
+	padding:10px 3px 10px 3px;
+	font-size:12px;
+	margin:3px;
+	color:#a0a0a0;
+	text-align:center;
+}
+.ajaxpage A {
+	border:1px solid #909090;
+	padding:2px 5px 2px 5px;
+	color:#999;
+	margin-right:3px;
+	text-decoration:none;
+}
+.ajaxpage A:hover {
+	border:1px solid #f0f0f0;
+	color:#ffffff;
+	background:#404040;
+}
+.ajaxpage A:active {
+	border:1px solid #f0f0f0;
+	color:#ffffff;
+	background:#404040;
+}
+.ajaxpage span.current {
+	border:1px solid #ffffff;
+	padding:2px 5px 2px 5px;
+	font-weight:bold;
+	color:#ffffff;
+	margin-right:3px;
+	background:#606060;
+}
+.ajaxpage span.disabled {
+	border:1px solid #ccc;
+	padding:2px 5px 2px 5px;
+	color:#ccc;
+	margin-right:3px;
+}
+/*内容页评论框*/
+.a_bian {
+	border:1px #d9d9d9 solid;
+	border-top:none;
+	padding:5px;
+}
+.Comm_box {
+	width:100%;
+	padding:5px;
+}
+.Comm_box td {
+	padding:5px;
+}
+.commtextArea {
+	width:510px;
+	height:100px;
+	border:#ccc solid 1px;
+}
+.a_nav {
+	border:1px #d9d9d9  solid;
+	background-color:#eee;
+	height:26px;
+	text-align:left;
+	padding-left:18px;
+	line-height:26px;
+	font-size:14px;
+	font-weight:bold;
+	color:#000;
+	clear:both;
+}
+/*getElementById样式*/
+.display-none {
+	display:none;
+	visibility:hidden;
+	position:absolute;
+	width:0px;
+	height:0px;
+	left:0px;
+	top:0px;
+}
+/*网站地图，请不要删除，可以在此基础上更改*/
+.maplink {
+	line-height:24px;
+	padding:8px;
+	text-align:left
+}
+.maplink dt {
+	background:#fff;
+	height:24px;
+	border-bottom:#fc642f 1px solid;
+	color:#5f5f5f;
+	font-size:14px;
+	font-weight:bold;
+	padding:5px 0 0 14px;
+}
+.maplink dd a {
+	color:5f5f5f;
+	text-decoration:none;
+	line-height:24px;
+                padding:0px;
+}
+.maplink dd a {
+	color:#1f376d;
+	margin-right:12px;
+	padding:1px;
+	font-size:13px;
+}
+.maplink dd a:hover {
+	color:#fff;
+	background:#fc642f;
+	padding:1px;
+	text-decoration:none;
+}
+/*Rss，请不要删除，可以在此基础上更改*/
+.rsslink dt {
+	background:#fff;
+	height:24px;
+	border-bottom:#d4d4d4 1px solid;
+	color:#5f5f5f;
+	font-weight:bold;
+	padding:2px 0 0 14px;
+}
+.rsslink dd a {
+	color:5f5f5f;
+}
+.rsslink dd a {
+	color:#1f376d;
+	margin-right:12px;
+	padding:2px 1px 1px 1px;
+	font-size:13px;
+}
+.rsslink dd a:hover {
+	color:#fff;
+	background:#509ad8;
+	padding:2px 1px 1px 1px;
+	text-decoration:none;
+}
