@@ -1,9 +1,11 @@
+<%if @size>0%>
 <ul>
-	<li><a title="SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季" href="/Html/Product/185.html"><img src="2013121613580051636.jpg">SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季</a></li>
-	<li><a title="SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季" href="/Html/Product/185.html"><img src="2013121613580051636.jpg">SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季</a></li>
-	<li><a title="SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季" href="/Html/Product/185.html"><img src="2013121613580051636.jpg">SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季</a></li>
-	<li><a title="SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季" href="/Html/Product/185.html"><img src="2013121613580051636.jpg">SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季</a></li>
-	<li><a title="SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季" href="/Html/Product/185.html"><img src="2013121613580051636.jpg">SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季</a></li>
-	<li><a title="SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季" href="/Html/Product/185.html"><img src="2013121613580051636.jpg">SAMSUNG&nbsp;Galaxy&nbsp;S4/i9500&nbsp;Mr.ROCK&nbsp;第三季</a></li>
-	
+	<%@products.each do |item|%>
+	<li><a title="<%=item.name%>" href="/linktodesc"><img src="2013121613580051636.jpg"><%="#{item.id}=>#{item.name}"%></a></li>
+	<%end%>
 </ul>
+<%else%>
+<ul>
+	<h1>暂无产品</h1>
+</ul>
+<%end%>
