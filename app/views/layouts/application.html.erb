@@ -12,6 +12,7 @@
 	<%= stylesheet_link_tag    "application", :media => "all" %>
 	<%= javascript_include_tag "application" %>
 	<%= csrf_meta_tags %>
+	
  </head>
 <body>
 	<div class="headfix">
@@ -125,13 +126,12 @@
 			</ul>
 			<script type="text/javascript">cssdropdown.startchrome("navMenu")</script>	
 		</div>
-	</div>
+	</div>	
 	<!-- JiaThis Button BEGIN -->
 	<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?uid=1375598809329438&move=0" charset="utf-8"></script>
 	<!-- JiaThis Button END -->
 	<%= yield %>
 	<div class="clear"></div>	
-	
 	<%=render :partial=>"layouts/foot"%>
 </body>
 </html>

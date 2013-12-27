@@ -1,7 +1,7 @@
 <%if @size>0%>
 <ul>
 	<%@products.each do |item|%>
-	<li><a title="<%=item.name%>" href="/linktodesc"><img src="2013121613580051636.jpg"><%="#{item.id}=>#{item.name}"%></a></li>
+	<li><a title="<%=item.name%>"  href="/product/product?id=<%=item.id%>"><img src="2013121613580051636.jpg"><%="#{item.id}=>#{item.name}"%></a></li>
 	<%end%>
 </ul>
 <%else%>

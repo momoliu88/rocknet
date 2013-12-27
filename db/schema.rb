@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131226080827) do
+ActiveRecord::Schema.define(:version => 20131227082906) do
+
+  create_table "pictures", :force => true do |t|
+    t.string   "picname"
+    t.string   "path"
+    t.integer  "pictype"
+    t.integer  "color"
+    t.integer  "product_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "pre_main_pic_relations", :force => true do |t|
+    t.integer  "prePic"
+    t.integer  "mainPic"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "product_types", :force => true do |t|
     t.string   "name"

@@ -1,0 +1,42 @@
+<div class="autoMaxWidth body" id="banner" style="width: 1351px;">
+	<img src="/assets/pro.png" style="left: -284.5px; position: relative;">
+</div>
+
+<div class="wrap body">
+	<div class="video_path">
+		<!--span><a href="/Html/Product/p3/ya/List_1.html">返回»</a></span-->
+		当前位置：
+		<a target="_self" href="/">首页</a>&gt;<a href="/Product/">产品浏览</a>&gt;
+		<a href="/Html/Product/p3/List_1.html">手机保护套</a>&gt;
+		<!--a href="/Html/Product/p3/ya/List_1.html">雅系列</a-->
+	</div>
+	<div class="pro_attr">
+		<%=render :partial=>"product/images_preview"%>
+	   <div class="pro_intro">
+	       <h1><%=@product.name%></h1>
+		   <p>产品材质：<%=@product.material%></p>
+		   <p>适用机型：<%=@product.descrip%></p>
+		   <p class="pro_color">可选颜色：
+			   <%colors = get_colors @product%>
+			   <%colors.each do|color|%>
+			   <a href="/product/product_color?id=<%=@product.id%>&col=<%=color%>" data-remote="true"><img src="/colors/<%=color%>.jpg"></a> 
+			   <%end%>
+		   </p>
+		   <div class="vp_share" id="product-share">
+			   <%=render :partial=>"product/share"%>
+		   </div>
+	   </div> 
+		<div class="clear"></div>
+	 </div>
+   <div class="clear"></div>
+   <div class="pro_line"></div>
+   <div class="pro_con">
+   <p style="text-align: center">
+	   <img style="width: 790px; height: 657px" src="/2013121611313957060.jpg" alt="">
+	   <img style="width: 790px; height: 478px" src="/2013121611315085966.jpg" alt="">
+   </p>
+	 	</div>
+	<div class="pro_line"></div>
+</div>
+<div id="hiddenDiv"style="display:none"></div>
+<script>activeThunms();</script>

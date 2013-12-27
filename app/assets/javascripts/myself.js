@@ -12,3 +12,4 @@ var options = {
 };
 $('#pag').bootstrapPaginator(options);
 }
+

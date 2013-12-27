@@ -1,0 +1,20 @@
+<%
+if @color
+	main_pics = @product.pictures.where({:pictype=>2,:color=>@color})
+else
+	main_pics = @product.pictures.where(:pictype=>2)
+end
+%>
+<div id="PROIMGLIST" class="pro_imglist">
+  <div class="big_IMG"><img id="main_img" src="<%=main_pics[0].path%>"></div>
+ <div class="s_imglist">
+   <ul>
+	   <%main_pics.each_with_index do |pic,idx|%>
+	   <%break if idx>=5%>
+	   <li><a href="javascript:void(0);">
+		   <img rel="<%=pic.path%>" class="thumb_img" src="<%=get_prepic_path pic.id%>"></a>
+	   </li>
+	   <%end%>
+   </ul>
+ </div>
+</div>
