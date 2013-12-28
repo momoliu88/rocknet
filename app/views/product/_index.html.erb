@@ -1,0 +1,51 @@
+<%=render :partial=>"layouts/banner"%>
+<div class="wrap body">
+	<div class="west">
+		<div class="imgtit"><img src="/assets/pro_tit.png"></div>
+		<div class="left_menu">
+			<ul id="jzMenu">
+				<%@kinds.each do |prodkind|%>
+					<li><a data-remote="true" class="<%=
+						if prodkind.id == @kind_type
+							"cur"
+						else 
+							""
+						end
+						%>" href="/product/index?kind=<%=prodkind.id%>"><%=prodkind.name%></a></li>
+				<%end%>
+			</ul>
+		</div>
+	</div>
+	<div class="mGrid">
+		<div class="pROpath">当前位置：<a target="_self" href="/">首页</a>&gt;<a href="/product/index">产品浏览</a>
+			><a data-remote="true" href="/product/index?kind=<%=@prodKind.id%>"><%=@prodKind.name%></a>
+		</div>
+		<div class="plist">
+			<%= render :partial=>"/product_type/list"%>
+		</div>
+		
+		<div class="clear"></div>
+		<div class="brandbotline"></div>
+		<div class="breakpage">
+			<table align="center">
+				<tbody>
+					<tr><td><div class="pages" id="pag"></div></td></tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="rGrid">
+		<p class="pd6"><img src="/assets/k-sea.png"></p>
+		<%=render :partial=>"plugins/quick_search"%>
+		<p class="pd6"><img src="/assets/xinpin.png"></p>
+		<p class="yuebtn pd6"><a href="/Plus/Search/Search.asp?ChannelID=1&amp;Mon=10&amp;Yea=2013">10月新品</a></p>
+		<p class="yuebtn pd6"><a href="/Plus/Search/Search.asp?ChannelID=1&amp;Mon=11&amp;Yea=2013">11月新品</a></p>
+		<p class="yuebtn"><a href="/Plus/Search/Search.asp?ChannelID=1&amp;Mon=12&amp;Yea=2013">12月新品</a></p>
+		<!--
+		<p style="padding:42px 0 18px 0;"><img src="/assets/pinpai.png"></p>
+		<p style="padding-bottom:18px;"><img src="/assets/guowai.png"></p>
+	-->
+	</div>
+</div>
+<div id="hiddenDiv"style="display:none"></div>

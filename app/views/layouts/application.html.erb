@@ -41,12 +41,11 @@
 								<li class="first"><a id="rocknav0" rel="dropmenu1" href="/aboutUs/index" data-remote="true">品牌简介</a></li>
 							<!--	<li><a id="rocknav1" rel="dropmenu2" href="/Article/">品牌资讯</a></li>-->
 								<li><a id="rocknav2" rel="dropmenu3" href="/brandUnit/index" data-remote="true">品牌联盟</a></li>
-								<li><a id="rocknav3" rel="dropmenu4" href="/Product/">产品浏览</a></li>
-								<li><a id="rocknav4" href="/Html/Rock/sale.html">销售网络</a></li>
+								<li><a id="rocknav3" rel="dropmenu4" href="/product/index" data-remote="true">产品浏览</a></li>
 						<!--		<li><a id="rocknav5" href="/Video/">影音专区</a></li>
 								<li><a id="rocknav6" href="/Html/Rock/fangwei.html">防伪查询</a></li>
 								-->
-								<li class="last"><a id="rocknav7" href="/Html/Rock/contact.html">联系我们</a></li>
+								<li class="last"><a id="rocknav7" href="/contact_us/index" data-remote="true">联系我们</a></li>
 							</ul>
 						</div>
 					</div>
@@ -71,27 +70,54 @@
 			</ul>
 		-->
 			<ul class="dropMenu" id="dropmenu3">
-   
-				<li><a href="/brandUnit/index?protype=1" data-remote="true">三星专区</a></li>
-   
-				<li><a href="/brandUnit/index?protype=2" data-remote="true">诺基亚专区</a></li>
-   
-				<li><a href="/brandUnit/index?protype=3" data-remote="true">HTC专区</a></li>
+				<%@orgs.each do |org|%>
+				<li><a href="/brandUnit/index?protype=<%=org.proType%>" data-remote="true"><%=org.name%>专区</a></li>
+				<%end%>
    
 				<li class="lastli"></li>
 			</ul>
 			<ul class="prodrop" id="dropmenu4" style="top: 89px; left: 751px; clip: rect(0px, auto, 159.374px, 0px); visibility: hidden;">
 				<div class="PROM">
 					<div class="promenu">
-						<li class="first"><a href="/?thread-7-1-0.html">手机保护壳</a></li>
-						<li><a href="/?thread-10-1-0.html">手机保护套</a></li>
-						<li><a href="/?thread-1-1-0.html">平板保护套</a></li>
-						<li><a href="/?thread-13-1-0.html">平板保护壳</a></li>
-						<li><a href="/?thread-14-1-0.html">保护膜</a></li>
+						<%@kinds.each_with_index do |prod_kind,idx| %>
+						<li class=<%
+						if idx == 0
+						"first"
+						else 
+						""
+						end
+						%> >
+							<a data-remote="true" href="/product?kind=<%=prod_kind.id%>"><%=prod_kind.name%></a></li>
+						<%end%>
 					</div>
 					<div class="propinpai">
 						<div class="psort">按手机品牌分类</div>
 						<div class="pflei">
+							<%idx = 0
+							while idx < @orgs.size do
+							%>
+							<ul class="
+							<%= if idx+3>=@orgs.size
+							"last"
+							else ""
+							end
+							%>
+							">
+								<%(0...4).each do |i|%>
+									<%if idx < @orgs.size%>
+									<li class="
+									<%= if i==0
+										"first"
+										else ""
+										end
+									%>
+									"><a data-remote="true"  href="/brandUnit/index?protype=<%=@orgs[idx].proType%>"><%=@orgs[idx].name%></a></li>
+									<%idx+=1%>
+									<%end%>
+								<%end%>
+							</ul>
+							<%end%>
+							<!--
 							<ul>
 								<li class="first"><a href="/Plus/Search/Search.asp?pID=2&amp;bID=0">苹果</a></li>
 								<li><a href="/Plus/Search/Search.asp?pID=3&amp;bID=0">三星</a></li>
@@ -118,7 +144,9 @@
 							</ul>
 							<ul class="last">
 								<li class="first"><a href="/Plus/Search/Search.asp?pID=0&amp;bID=9">中兴</a></li>
-							</ul><div class="clear"></div>				   
+							</ul>
+						-->
+							<div class="clear"></div>				   
 						</div>
 					</div>
 					<div class="clear"></div>

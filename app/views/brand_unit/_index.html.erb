@@ -6,9 +6,16 @@
 		<div class="imgtit"><img src="/assets/brand_u_tit.png"></div>
 		<div class="left_menu">
 			<ul id="jzMenu">
-				<li><a id="band1" class='<%=classType1 @protype%>' href="product_type/products?protype=1&pages=1" data-remote="true">三星专区</a></li>
-				<li><a id="band2" class='<%=classType2 @protype%>'href="product_type/products?protype=2&pages=1" data-remote="true">诺基亚专区</a></li>
-				<li><a id="band3" class='<%=classType3 @protype%>'href="product_type/products?protype=3&pages=1" data-remote="true">HTC专区</a></li>
+				<%@orgs.each_with_index do |org,idx|%>
+				<li><a id="band<%=org.id%>" class='
+					<%=if org.proType ==1
+					"cur"
+					else 
+					""
+					end
+					%>
+					' href="product_type/products?protype=<%=org.proType%>" data-remote="true"><%=org.name%>专区</a></li>
+				<%end%>
 			</ul>
 		</div>
 	</div>

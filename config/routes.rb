@@ -1,4 +1,10 @@
 RockNet::Application.routes.draw do
+  get "contact_us/index"
+
+  get "product_kind/index"
+
+  get "product_kind/products"
+
   get "brand_unit/index"
 
   get "band_promotion/index"

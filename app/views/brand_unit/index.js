@@ -1,3 +1,4 @@
 $(".body").replaceWith("");
 $("#hiddenDiv").replaceWith("<%=escape_javascript(render(:partial=>'index'))%>");
-pag(<%=@size%>,<%=@protype%>);
+var url ="/product_type/products?protype="+<%=@protype%>;
+pag(<%=@size%>,url);

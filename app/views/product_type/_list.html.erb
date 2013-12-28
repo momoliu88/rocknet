@@ -1,7 +1,15 @@
 <%if @size>0%>
+<%test="/d33d3d4681a9738016ccd35addf20893/2013122715200333397.jpg"%>
 <ul>
 	<%@products.each do |item|%>
-	<li><a title="<%=item.name%>"  href="/product/product?id=<%=item.id%>"><img src="2013121613580051636.jpg"><%="#{item.id}=>#{item.name}"%></a></li>
+	<%pic = item.pictures.where(:pictype=>2).first%>
+	<li><a title="<%=item.name%>"  href="/product/product?id=<%=item.id%>"><img src="<%=
+		if pic
+			pic.path 
+		else 
+			test
+		end
+		%>"><%="#{item.id}"%></a></li>
 	<%end%>
 </ul>
 <%else%>

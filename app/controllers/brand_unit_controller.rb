@@ -1,7 +1,8 @@
 class BrandUnitController < ApplicationController
   def index
+    @orgs = ProductType.all
     unless params[:protype]
-      @protype = 1
+      @protype = @orgs[0].proType
     else
       @protype = params[:protype].to_i
     end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131227082906) do
+ActiveRecord::Schema.define(:version => 20131227131723) do
 
   create_table "pictures", :force => true do |t|
     t.string   "picname"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(:version => 20131227082906) do
   create_table "pre_main_pic_relations", :force => true do |t|
     t.integer  "prePic"
     t.integer  "mainPic"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "prod_kinds", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
