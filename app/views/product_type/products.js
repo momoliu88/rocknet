@@ -4,4 +4,5 @@ $(this).children("a").removeClass("cur");
 });
 $("<%="#band#{@protype}"%>").addClass("cur");
 $(".brandlist > ul").replaceWith("<%=escape_javascript(render(:partial=>'list'))%>");
-pag(<%=@size%>,<%=@protype%>);
+var url = "/product_type/products?protype="+<%=@protype%>;
+pag(<%=@size%>,url);

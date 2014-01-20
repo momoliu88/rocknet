@@ -2,28 +2,19 @@
 <div class="wrap body">
 	<div class="west">
 		<div class="imgtit"><img src="/assets/pro_tit.png"></div>
-		<div class="left_menu">
-			<ul id="jzMenu">
-				<%@kinds.each do |prodkind|%>
-					<li><a data-remote="true" class="<%=
-						if prodkind.id == @kind_type
-							"cur"
-						else 
-							""
-						end
-						%>" href="/product/index?kind=<%=prodkind.id%>"><%=prodkind.name%></a></li>
-				<%end%>
-			</ul>
-		</div>
+		<%=render :partial=>"leftmenu"%>
 	</div>
 	<div class="mGrid">
-		<div class="pROpath">当前位置：<a target="_self" href="/">首页</a>&gt;<a href="/product/index">产品浏览</a>
+		<div class="pROpath">当前位置：
+			<%if @isTopL == "1"%>
+			产品搜索
+			<%else%>
+			<a target="_self" href="/">首页</a>&gt;<a href="/product/index">产品浏览</a>
 			><a data-remote="true" href="/product/index?kind=<%=@prodKind.id%>"><%=@prodKind.name%></a>
+			<%end%>
 		</div>
-		<div class="plist">
-			<%= render :partial=>"/product_type/list"%>
-		</div>
-		
+		<%= render :partial=>"/product_type/list"%>
+			
 		<div class="clear"></div>
 		<div class="brandbotline"></div>
 		<div class="breakpage">
@@ -49,3 +40,10 @@
 	</div>
 </div>
 <div id="hiddenDiv"style="display:none"></div>
+<input id="urlNextPage" style="display:none" value="
+<%if @isTopL == "1" %>
+<%="/product/pagination"%>	
+<%else%>
+<%="/product_kind/products?kind=#{@kind_type}"%>	
+<%end%>
+"/>

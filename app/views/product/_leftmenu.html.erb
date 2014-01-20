@@ -1,0 +1,13 @@
+<div class="left_menu">
+	<ul id="jzMenu">
+		<%ProductKindController::KINDS.each do |prodkind|%>
+			<li><a data-remote="true" class="<%=
+				if prodkind.id == @kind_type
+					"cur"
+				else 
+					""
+				end
+				%>" href="/product/index?kind=<%=prodkind.id%>"><%=prodkind.name%></a></li>
+		<%end%>
+	</ul>
+</div>

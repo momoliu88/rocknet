@@ -1,5 +1,7 @@
 require 'pp'
 class ProductTypeController < ApplicationController
+  ORGS = ProductType.all
+
   def products
     @protype = params[:protype]
     pp "type => #{@protype}"

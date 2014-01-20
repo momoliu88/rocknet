@@ -1,5 +1,7 @@
+
 class ProductKindController < ApplicationController
   #params kind
+  KINDS = ProdKind.all
   def index
     @kind = params[:kind]||1
     @prod_kind = ProdKind.find(@kind)

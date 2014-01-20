@@ -31,7 +31,7 @@
 								</ul>
 							</div>
 							<div class="t_search">
-								<div class="int_l"><div><input type="text" onfocus="if(this.value=='搜索产品')value='';" onblur="if(this.value=='')value='搜索产品';" onkeydown="if (event.keyCode==13) {}" autocomplete="off" value="搜索产品" maxlength="15" id="KeyWords" name="KeyWords" class="sea_input"></div></div>
+								<div class="int_l"><div><input type="text" onfocus="if(this.value=='搜索产品')value='';" onblur="if(this.value=='')value='搜索产品';" onkeydown="if (event.keyCode==13) {}" autocomplete="off" value="搜索产品" maxlength="15" id="Keyword" name="Keyword" class="sea_input"></div></div>
 								<div id="query_pro" class="sub_btn"></div>
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 			</ul>
 		-->
 			<ul class="dropMenu" id="dropmenu3">
-				<%@orgs.each do |org|%>
+				<%ProductTypeController::ORGS.each do |org|%>
 				<li><a href="/brandUnit/index?protype=<%=org.proType%>" data-remote="true"><%=org.name%>专区</a></li>
 				<%end%>
    
@@ -162,4 +162,21 @@
 	<div class="clear"></div>	
 	<%=render :partial=>"layouts/foot"%>
 </body>
+<script language="JavaScript">
+$("#query_pro").click(function(){
+var keyword=$("#Keyword").val();
+if (keyword==""||keyword=="搜索产品")
+{
+	$.zxxbox.remind("请输入关键字", null,{title: "系统提示您"});
+	return false;
+};
+$.ajax({
+  type: "GET",
+  url: "/product/index?topL=1&Keyword="+keyword,
+  dataType: "script"
+});
+//window.location="/Plus/Search/Search.asp?ChannelID=1&KeyWord="+escape(keyword)+"";return true;
+
+});
+</script> 
 </html>
